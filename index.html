@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩飞阳测试反馈</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ccc; /* 灰色背景 */
+            font-family: Arial, sans-serif;
+        }
+        .feedback-card {
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto;
+            background: rgba(200, 162, 200, 0.8); /* 淡紫色卡片 */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .feedback-card h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .form-group textarea {
+            min-height: 100px;
+        }
+        .upload-btn {
+            background: #fff;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .tips {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+        }
+        .submit-btn {
+            width: 100%;
+            background: #ff6b9d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-card">
+        <h2>意见反馈</h2>
+        <form id="feedback-form" action="/thankyou.html" method="get">
+            <div class="form-group">
+                <textarea name="feedback" placeholder="请输入您的意见或建议" required></textarea>
+            </div>
+            <div class="form-group">
+                <div class="upload-btn">点击上传图片</div>
+                <input type="file" name="image" style="display: none;">
+                <div class="tips">以上上传图片只需点击图片一次即可</div>
+            </div>
+            <button type="submit" class="submit-btn">提交我的意见或反馈</button>
+        </form>
+    </div>
+    <script>
+        // 上传图片按钮点击事件
+        document.querySelector.querySelector('.('.upload-btn').addEventListener('click', function() {
+            document.querySelector('input[type="file"]').click();
+        });
+    </script>
+</body>
+</html>
