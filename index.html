@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>意见反馈</title>
+    <style>
+        body {
+            background-color: #b5a8c2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .feedback-box {
+            background-color: #d8c8e2;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .input-area {
+            margin-bottom: 15px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #f5b742;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .upload-btn {
+            background-color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            text-align: center;
+        }
+        .upload-btn:hover {
+            background-color: #f0f0f0;
+        }
+        #image-preview {
+            margin-top: 15px;
+            max-width: 100%;
+            border-radius: 5px;
+            display: none;
+        }
+        .submit-btn {
+            background-color: #8a7597;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .submit-btn:hover {
+            background-color: #7a6587;
+        }
+        .hint {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-box">
+        <h2>意见反馈</h2>
+        <div class="input-area">
+            <input type="text" placeholder="请输入您的意见或建议">
+        </div>
+        <button class="upload-btn" id="upload-btn">点击上传图片</button>
+        <input type="file" id="image-upload" accept="image/*" style="display: none;">
+        <img id="image-preview" alt="图片预览">
+        <div class="hint">温馨提示：上传图片只需点击一下图片内容即可</div>
+        <button class="submit-btn">提交我的意见或反馈</button>
+    </div>
+
+    <script>
+        const uploadBtn = document.getElementById('upload-btn');
+        const imageUpload = document.getElementById('image-upload');
+        const imagePreview = document.getElementById('image-preview');
+
+        uploadBtn.addEventListener('click', () => {
+            imageUpload.click();
+        });
+
+        imageUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    imagePreview.src = event.target.result;
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
